@@ -67,7 +67,10 @@ class _LogoutButtonState extends State<LogoutButton> {
 
   Widget _buildLoader() {
     return Center(
-      child: LoadingAnimationWidget.beat(color: Colors.white, size: 25),
+      child: LoadingAnimationWidget.staggeredDotsWave(
+        color: Colors.white,
+        size: 35,
+      ),
     );
   }
 
