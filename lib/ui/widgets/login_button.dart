@@ -1,5 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_login/service/auth_service.dart';
+import 'package:flutter_firebase_login/utils/injection_container.dart';
 
 class LoginButton extends StatefulWidget {
   final TextEditingController usernameController;
@@ -22,7 +23,7 @@ class LoginButton extends StatefulWidget {
 class _LoginButtonState extends State<LoginButton> {
   final buttonText = "Login";
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final AuthService _authService = injector<AuthService>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,15 +43,18 @@ class _LoginButtonState extends State<LoginButton> {
     String email = widget.usernameController.text;
     String password = widget.passwordController.text;
 
-    try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-      if (!mounted) return;
+    final loggedIn = await _authService.loginWithEmailAndPassword(
+      email,
+      password,
+    );
+
+    if (!mounted) return;
+    if (loggedIn) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => widget.successScreen),
       );
-    } catch (e) {
-      if (!mounted) return;
+    } else {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => widget.errorScreen),
