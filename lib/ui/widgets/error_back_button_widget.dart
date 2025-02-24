@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ErrorBackButton extends StatelessWidget {
   const ErrorBackButton({super.key});
 
+  final buttonText = "Back";
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -16,7 +18,7 @@ class ErrorBackButton extends StatelessWidget {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
       ),
-      child: const Text('Back'),
+      child: Text(buttonText),
     );
   }
 
