@@ -4,6 +4,16 @@
 
 The goal of this project is to build a Flutter application that enables users to log in using Firebase Authentication and includes a unit test for the authentication logic.
 
+## Screenshots
+
+Below are some screenshots of the app:
+
+<p align="center">
+    <img src="screenshots/login_screenshot.png" alt="Login Screen" width="200"/>
+    <img src="screenshots/success_screenshot.png" alt="Home Screen" width="200"/>
+    <img src="screenshots/failure_screenshot.png" alt="Profile Screen" width="200"/>
+</p>
+
 ## Features
 
 ### Flutter App Setup
