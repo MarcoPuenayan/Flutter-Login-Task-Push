@@ -3,11 +3,12 @@ import 'dart:async';
 import 'package:flutter_firebase_login/bloc/interfaces/auth_bloc.dart';
 import 'package:flutter_firebase_login/models/auth_user.dart';
 import 'package:flutter_firebase_login/service/interfaces/auth_service.dart';
-import 'package:flutter_firebase_login/utils/injection_container.dart';
 import 'package:rxdart/rxdart.dart';
 
 class UserAuthBloc implements AuthBloc {
-  final AuthService _authService = injector<AuthService>();
+  final AuthService _authService;
+
+  UserAuthBloc(this._authService);
 
   final PublishSubject<AuthUser?> _userAuthController =
       PublishSubject<AuthUser?>();

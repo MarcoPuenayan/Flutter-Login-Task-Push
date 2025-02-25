@@ -3,14 +3,16 @@ import 'package:flutter_firebase_login/models/auth_user.dart';
 import 'package:flutter_firebase_login/service/interfaces/auth_service.dart';
 
 class FirebaseAuthService implements AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth;
+
+  FirebaseAuthService(this._firebaseAuth);
 
   late AuthUser _currentAuthUser;
 
   @override
   Future<AuthUser?> login(String email, String password) async {
     try {
-      final credentials = await _auth.signInWithEmailAndPassword(
+      final credentials = await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -33,6 +35,6 @@ class FirebaseAuthService implements AuthService {
 
   @override
   Future<void> logout() async {
-    _auth.signOut();
+    _firebaseAuth.signOut();
   }
 }

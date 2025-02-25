@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_login/bloc/interfaces/auth_bloc.dart';
@@ -12,8 +13,12 @@ void setup() {
   debugPrint("Dependency injection started");
 
   //Auth Service
-  injector.registerLazySingleton<AuthService>(() => FirebaseAuthService());
+  injector.registerLazySingleton<AuthService>(
+    () => FirebaseAuthService(FirebaseAuth.instance),
+  );
 
   //Bloc
-  injector.registerFactory<AuthBloc>(() => UserAuthBloc());
+  injector.registerFactory<AuthBloc>(
+    () => UserAuthBloc(injector<AuthService>()),
+  );
 }
