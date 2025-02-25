@@ -8,10 +8,10 @@ The goal of this project is to build a Flutter application that enables users to
 
 Below are some screenshots of the app:
 
-<p align="center">
-    <img src="screenshots/login_screenshot.png" alt="Login Screen" width="200"/>
-    <img src="screenshots/success_screenshot.png" alt="Home Screen" width="200"/>
-    <img src="screenshots/failure_screenshot.png" alt="Profile Screen" width="200"/>
+<p align="center" style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <img src="screenshots/login_screenshot.png" alt="Login Screen" width="200" style="margin: 10px;"/>
+    <img src="screenshots/success_screenshot.png" alt="Home Screen" width="200" style="margin: 10px;"/>
+    <img src="screenshots/failure_screenshot.png" alt="Profile Screen" width="200" style="margin: 10px;"/>
 </p>
 
 ## Features
