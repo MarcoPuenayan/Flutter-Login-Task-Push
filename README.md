@@ -51,3 +51,29 @@ To generate the required files for unit testing, run the following command:
 ```sh
 dart run build_runner build
 ```
+
+## Areas for Improvement
+
+While the project achieves its primary objectives, there are several areas where it could be improved:
+
+### Enhanced UI/UX
+
+I would have liked to add swipe animations when navigating from the login to the success/failure screens in a way that the banner images flowed smoothly.
+
+### Logging
+
+There is very minimal to almost no logging in this project. This can negatively affect the debuggin experience when building new features in the future.
+
+### Code Quality
+
+I'd like to add comprehensive documentation to the codebase to make it easier for other developers to understand and contribute.
+
+### Testing
+
+I would improve testing by adding Widget tests. Widgets like the LogoutButton have cimplexity within them that should be tested properly.
+
+### Side-Hustles
+
+I would like to do this project using a difference design pattern than the BloC aproach used here. There is room for growth in exploring Riverpod, provider and even the BloC package.
+
+By addressing these areas, the project can be made more robust, user-friendly, and maintainable.
