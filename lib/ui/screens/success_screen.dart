@@ -1,12 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_login/bloc/interfaces/auth_bloc.dart';
+import 'package:flutter_firebase_login/models/auth_user.dart';
 import 'package:flutter_firebase_login/ui/widgets/logout_button.dart';
 import 'package:flutter_firebase_login/ui/widgets/result_banner_widget.dart';
+import 'package:flutter_firebase_login/utils/injection_container.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
-class SuccessScreen extends StatelessWidget {
+class SuccessScreen extends StatefulWidget {
+  const SuccessScreen({super.key});
+
+  @override
+  State<SuccessScreen> createState() => _SuccessScreenState();
+}
+
+class _SuccessScreenState extends State<SuccessScreen> {
   final bannerPath = "assets/images/success_banner.png";
+
   final message = "Welcome Back!";
 
-  const SuccessScreen({super.key});
+  final AuthBloc _authBloc = injector<AuthBloc>();
+
+  @override
+  void initState() {
+    super.initState();
+    _authBloc.fetchCurrentAuthUser();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +60,19 @@ class SuccessScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 130),
+                  const SizedBox(height: 20),
+                  StreamBuilder<AuthUser?>(
+                    stream: _authBloc.userAuthStream,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        AuthUser authUser = snapshot.data!;
+                        return _buildUserDetails(authUser);
+                      } else {
+                        return _buildLoader();
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 60),
                   LogoutButton(),
                 ],
               ),
@@ -51,5 +81,30 @@ class SuccessScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildLoader() {
+    return Center(
+      child: LoadingAnimationWidget.staggeredDotsWave(
+        color: Colors.white,
+        size: 35,
+      ),
+    );
+  }
+
+  Widget _buildUserDetails(AuthUser authUser) {
+    return Center(
+      child: Text(
+        "Email: ${authUser.emailAddress} \n UserId: ${authUser.userId}",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 16, color: Theme.of(context).primaryColor),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _authBloc.dispose();
+    super.dispose();
   }
 }

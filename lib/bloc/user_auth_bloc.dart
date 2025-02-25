@@ -10,8 +10,8 @@ class UserAuthBloc implements AuthBloc {
 
   UserAuthBloc(this._authService);
 
-  final PublishSubject<AuthUser?> _userAuthController =
-      PublishSubject<AuthUser?>();
+  final BehaviorSubject<AuthUser?> _userAuthController =
+      BehaviorSubject<AuthUser?>();
 
   @override
   Stream<AuthUser?> get userAuthStream => _userAuthController.stream;
