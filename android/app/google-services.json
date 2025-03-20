@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "583893775043",
-    "project_id": "flutter-firebase-login-73ce6",
-    "storage_bucket": "flutter-firebase-login-73ce6.firebasestorage.app"
+    "project_number": "620973774386",
+    "project_id": "fir-login-flutter-7b97a",
+    "storage_bucket": "fir-login-flutter-7b97a.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583893775043:android:6555680a6f2cfbf0ab2876",
+        "mobilesdk_app_id": "1:620973774386:android:d16a296e7400fecab58e2b",
         "android_client_info": {
           "package_name": "com.genetics.flutter_firebase_login"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDeNjjvNJTHuQQL5oqilziGyJDrrRqQIgw"
+          "current_key": "AIzaSyBwSq4D2dAe4FeQNdLq2uTY72XS5VRUw50"
         }
       ],
       "services": {

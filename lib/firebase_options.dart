@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDeNjjvNJTHuQQL5oqilziGyJDrrRqQIgw',
-    appId: '1:583893775043:android:6555680a6f2cfbf0ab2876',
-    messagingSenderId: '583893775043',
-    projectId: 'flutter-firebase-login-73ce6',
-    storageBucket: 'flutter-firebase-login-73ce6.firebasestorage.app',
+    apiKey: 'AIzaSyBwSq4D2dAe4FeQNdLq2uTY72XS5VRUw50',
+    appId: '1:620973774386:android:d16a296e7400fecab58e2b',
+    messagingSenderId: '620973774386',
+    projectId: 'fir-login-flutter-7b97a',
+    storageBucket: 'fir-login-flutter-7b97a.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBn3LRKZGE_be-X_KaT7JEWEnoDd3KtQTs',
-    appId: '1:583893775043:ios:3927bc8247d72aeaab2876',
-    messagingSenderId: '583893775043',
-    projectId: 'flutter-firebase-login-73ce6',
-    storageBucket: 'flutter-firebase-login-73ce6.firebasestorage.app',
+    apiKey: 'AIzaSyC8ugdSkVlyA31S7bLL0hNWqcjYmr-_Jkw',
+    appId: '1:620973774386:ios:59eb2120173d8fccb58e2b',
+    messagingSenderId: '620973774386',
+    projectId: 'fir-login-flutter-7b97a',
+    storageBucket: 'fir-login-flutter-7b97a.firebasestorage.app',
     iosBundleId: 'com.genetics.flutterFirebaseLogin',
   );
+
 }
